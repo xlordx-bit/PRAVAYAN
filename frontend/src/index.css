@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-pravayan-light: #fbfaff;
+  --color-pravayan-dark: #0a0915;
+  --color-pravayan-primary: #5D3FD3;
+  --color-pravayan-purple: #7C3AED;
+  --color-pravayan-accent: #A78BFA;
+  --color-pravayan-slate: #1E1B4B;
+  --color-pravayan-gray: #4B5563;
+  --color-pravayan-muted: #8B5CF6;
+
+  --font-sans: 'Outfit', 'Inter', sans-serif;
+
+  --animate-float-slow: floatSlow 25s ease-in-out infinite;
+  --animate-float-medium: floatMedium 18s ease-in-out infinite;
+  --animate-pulse-subtle: pulseSubtle 5s ease-in-out infinite;
+
+  @keyframes floatSlow {
+    0%, 100% { transform: translate(0px, 0px) scale(1); }
+    50% { transform: translate(30px, -40px) scale(1.15); }
+  }
+  @keyframes floatMedium {
+    0%, 100% { transform: translate(0px, 0px) scale(1); }
+    50% { transform: translate(-40px, 30px) scale(0.9); }
+  }
+  @keyframes pulseSubtle {
+    0%, 100% { opacity: 0.15; }
+    50% { opacity: 0.35; }
+  }
+}
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  font-family: 'Outfit', 'Inter', sans-serif;
+  background-color: #fbfaff;
+  color: #1e1b4b;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Custom keyframes for SVG flow and glow animations */
+@keyframes flow-dash {
+  to {
+    stroke-dashoffset: -80;
+  }
+}
+
+.animate-flow-slow {
+  stroke-dasharray: 15, 25;
+  animation: flow-dash 6s linear infinite;
+}
+
+.animate-flow-fast {
+  stroke-dasharray: 20, 20;
+  animation: flow-dash 3s linear infinite;
+}
+
+@keyframes grid-pulse {
+  0%, 100% {
+    opacity: 0.15;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+.animate-grid-pulse {
+  animation: grid-pulse 4s ease-in-out infinite;
+}
+
+@keyframes wave-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 2px rgba(93, 63, 211, 0.2));
+  }
+  50% {
+    filter: drop-shadow(0 0 10px rgba(124, 58, 237, 0.7));
+  }
+}
+
+.animate-wave-glow {
+  animation: wave-glow 4s ease-in-out infinite;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f0f7;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
